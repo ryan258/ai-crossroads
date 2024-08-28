@@ -3,33 +3,31 @@
 class PerformanceTracker {
     constructor() {
       this.metrics = {};
+      this.startTimes = {};
     }
   
     startTimer(operationName) {
-      // TODO: Implement logic to start a timer for a specific operation
+      this.startTimes[operationName] = process.hrtime();
     }
   
     endTimer(operationName) {
-      // TODO: Implement logic to end a timer and calculate duration
+      const endTime = process.hrtime(this.startTimes[operationName]);
+      const duration = endTime[0] * 1000 + endTime[1] / 1000000; // Convert to milliseconds
+      this.metrics[operationName] = duration;
     }
   
     recordTokenUsage(agentName, tokenCount) {
-      // TODO: Implement logic to record token usage for a specific agent
-    }
-  
-    recordMemoryUsage() {
-      // TODO: Implement logic to record current memory usage
+      this.metrics[`${agentName}TokenUsage`] = tokenCount;
     }
   
     getMetrics() {
-      // TODO: Implement logic to return all recorded metrics
+      return { ...this.metrics };
     }
   
     resetMetrics() {
-      // TODO: Implement logic to reset all metrics
+      this.metrics = {};
+      this.startTimes = {};
     }
-  
-    // TODO: Add more methods as needed for other performance metrics
   }
   
   module.exports = PerformanceTracker;
