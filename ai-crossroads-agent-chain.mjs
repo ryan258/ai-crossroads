@@ -1,4 +1,4 @@
-// File: /path/to/your/project/ai-crossroads-agent-chain.mjs
+// File: /ai-crossroads-agent-chain.mjs
 
 import dotenv from 'dotenv';
 import axios from 'axios';
