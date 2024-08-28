@@ -1,0 +1,43 @@
+/* File: src/frontend/styles/tailwind.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styles */
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-900;
+  }
+}
+
+@layer components {
+  /* Example custom component styles */
+  .btn {
+    @apply px-4 py-2 rounded font-semibold text-sm text-white shadow-sm;
+  }
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600;
+  }
+  .btn-secondary {
+    @apply bg-gray-500 hover:bg-gray-600;
+  }
+}
+
+@layer utilities {
+  /* Example custom utility styles */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+}
+
+/* Agent-specific colors */
+.agent-concept-generator { @apply bg-red-100 border-red-500; }
+.agent-research-aggregator { @apply bg-blue-100 border-blue-500; }
+.agent-narrative-designer { @apply bg-green-100 border-green-500; }
+.agent-visual-concept-artist { @apply bg-purple-100 border-purple-500; }
+.agent-focus-group-simulator { @apply bg-yellow-100 border-yellow-500; }
+.agent-project-manager { @apply bg-indigo-100 border-indigo-500; }
+.agent-producer { @apply bg-pink-100 border-pink-500; }
+
+/* TODO: Add more custom styles as needed */
